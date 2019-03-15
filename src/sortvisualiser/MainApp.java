@@ -4,7 +4,6 @@ import sortvisualiser.screens.MainMenuScreen;
 import sortvisualiser.screens.Screen;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 
 /**
  * The main application point for controlling the program
@@ -21,7 +20,7 @@ public class MainApp {
     public MainApp() {
         screens = new ArrayList<>();
         window = new JFrame ("Sort visualiser");
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
     }
     
@@ -59,12 +58,5 @@ public class MainApp {
     public void start() {
         pushScreen(new MainMenuScreen(this));
         window.pack();
-    }
-    
-    public static void main(String... args) {
-        System.setProperty("sun.java2d.opengl", "true");
-        SwingUtilities.invokeLater(() -> {
-            new MainApp().start();
-        });
     }
 }
